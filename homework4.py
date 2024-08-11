@@ -63,8 +63,7 @@ class Asset(BankAccount, Security, RealEstate):
         RealEstate.__init__(self, attribute4)
 
     def __str__(self):
-        return (f"{BankAccount.__str__(self)} + {Security.__str__(self)} + "
-                f"{RealEstate.__str__(self)}")
+        return f"{BankAccount.__str__(self)} + {Security.__str__(self)} + {RealEstate.__str__(self)}"
 
 
 class InsurableItem(BankAccount, RealEstate):
@@ -86,5 +85,6 @@ class InterestBearingItem(BankAccount, Security):
 
 
 # Пример использования класса BankAccount
-a = BankAccount("e", "r")
+a = InterestBearingItem("1", "2", "3", "4")
 print(a)
+print(InsurableItem.mro())
